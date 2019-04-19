@@ -2749,6 +2749,14 @@ impl DrawList {
         }
     }
 
+    pub fn get_vertex_count(&self) -> u32 {
+        self.internal.vertex_count
+    }
+
+    pub fn get_index_count(&self) -> u32 {
+        self.internal.element_count
+    }
+
     // pub fn push_userdata(&mut self, userdata: nk_handle) {
     // unsafe {
     // nk_draw_list_push_userdata(&mut self as *mut nk_draw_list, userdata.internal);
