@@ -4530,7 +4530,7 @@ impl Context {
         }
     }
 
-    pub fn draw_command_iterator<'a>(&'a mut self, buf: &'a Buffer) -> DrawCommandIterator<'a> {
+    pub fn draw_command_iterator<'a>(&'a self, buf: &'a Buffer) -> DrawCommandIterator<'a> {
         DrawCommandIterator { ctx: self, buf }
     }
 
@@ -4574,7 +4574,7 @@ impl<'a> Iterator for CommandIntoIter<'a> {
 // ============================================================================================
 
 pub struct DrawCommandIterator<'a> {
-    ctx: &'a mut Context,
+    ctx: &'a Context,
     buf: &'a Buffer,
 }
 
