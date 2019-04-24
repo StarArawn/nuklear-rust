@@ -12,7 +12,7 @@ fn main() {
     }
     cc::Build::new()
         .file("nuklear-c/bind.c")
-        .flag("-Wno-unused-parameter")
-        .flag("-Wno-implicit-fallthrough")
+        .flag_if_supported("-Wno-unused-parameter")
+        .flag_if_supported("-Wno-implicit-fallthrough")
         .compile("libnuklear");
 }
